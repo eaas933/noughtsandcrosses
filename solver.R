@@ -8,7 +8,7 @@ Games_Percentages <- (Games / Total_Games) * 100
 Total_Games_Possible <- data.frame(Outcomes, Games_Percentages)
 ggplot(Total_Games_Possible, aes(Outcomes, Games_Percentages, colour = Outcomes, fill = Outcomes)) +
   geom_bar(stat = "identity") +
-  geom_text(aes(label = Outcomes), colour = "black", vjust = -0.4, hjust = -0.04) +
+  geom_text(aes(label = c(5, 6, 7, 8, 9, "Draw")), colour = "black", vjust = -0.2, hjust = 1.1, face = "bold", size = 8) +
   labs(x = "possible game outcomes", 
        y = "% likelihood of outcome relative to the total possible games",
        title = "Noughts and Crosses - all outcomes",
