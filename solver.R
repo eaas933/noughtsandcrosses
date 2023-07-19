@@ -18,7 +18,6 @@ ggplot(Total_Games_Possible, aes(Outcomes, Games_Percentages, colour = Outcomes,
   theme(panel.grid.minor = element_line(size = 1), panel.grid.major = element_line(size = 0.5), 
         axis.title.x = element_text(colour="black", size=10, face="bold"),
         axis.title.y = element_text(colour="black", size=10, face="bold"))
-  
 
 # the objective is to create a script that effectively wins or draws every single game of N&T
 # first we need to create a working version of tic-tac-toe
@@ -29,6 +28,18 @@ board <- matrix(
 rownames(board) = c("A", "B", "C") 
 colnames(board) = c("D", "E", "F")
 
-board
+board["B", "D"] <- "x"
+board["B", "E"] <- "x"
+board["B", "F"] <- "x"
 
-board["A", "D"]
+if (board["A", "D"] == board["A", "E"] && board["A", "E"] == board["A", "F"] |
+    board["B", "D"] == board["B", "E"] && board["B", "E"] == board["B", "F"] |
+    board["C", "D"] == board["C", "E"] && board["C", "E"] == board["C", "F"]) {
+  print(paste(board["A", "D"], "has won!"))
+  board <- matrix(
+    c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
+  rownames(board) = c("A", "B", "C") 
+  colnames(board) = c("D", "E", "F")
+}
+
+board
