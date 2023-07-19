@@ -29,13 +29,19 @@ rownames(board) = c("A", "B", "C")
 colnames(board) = c("D", "E", "F")
 
 board["B", "D"] <- "x"
-board["B", "E"] <- "x"
+board["B", "E"] <- "o"
 board["B", "F"] <- "x"
 
 if (board["A", "D"] == board["A", "E"] && board["A", "E"] == board["A", "F"] |
     board["B", "D"] == board["B", "E"] && board["B", "E"] == board["B", "F"] |
     board["C", "D"] == board["C", "E"] && board["C", "E"] == board["C", "F"]) {
   print(paste(board["A", "D"], "has won!"))
+  board <- matrix(
+    c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
+  rownames(board) = c("A", "B", "C") 
+  colnames(board) = c("D", "E", "F")
+} else {
+  print("The game has ended in a draw")
   board <- matrix(
     c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
   rownames(board) = c("A", "B", "C") 
