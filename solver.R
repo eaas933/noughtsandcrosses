@@ -28,10 +28,6 @@ board <- matrix(
 rownames(board) = c("A", "B", "C") 
 colnames(board) = c("D", "E", "F")
 
-board["A", "D"] <- "o"
-board["B", "D"] <- "o"
-board["C", "D"] <- "o"
-
 if (board["A", "D"] == board["A", "E"] && board["A", "E"] == board["A", "F"]) {
   print(paste(board["A", "D"], "has won!"))
   board <- matrix(
@@ -88,4 +84,14 @@ if (board["A", "D"] == board["A", "E"] && board["A", "E"] == board["A", "F"]) {
   colnames(board) = c("D", "E", "F")
 }
 
-board
+x_move <- function(row, column) {
+  board[row, column] <<- "x"
+  board
+}
+
+o_move <- function(row, column) {
+  board[row, column] <<- "o"
+  board
+}
+
+o_move("A", "D")
