@@ -29,6 +29,16 @@ rownames(board) = c("A", "B", "C")
 colnames(board) = c("D", "E", "F")
 
 move <<- 0
+game_total_moves <<- c(5, 5)
+top_row_horizontal <<- 0
+middle_row_horizontal <<- 0 
+bottom_row_horizontal <<- 0
+first_col_vertical <<- 0
+second_col_vertical <<- 0
+third_col_vertical <<- 0 
+left_to_right_diagonal <<- 0
+right_to_left_diagonal <<- 0
+game_draw <<- 0
 
 x_move <- function(row, column) {
   board[row, column] <<- "x"
@@ -39,6 +49,8 @@ x_move <- function(row, column) {
     
   if (board[1, 1] == board[1, 2] && board[1, 2] == board[1, 3]) {
     print(paste(board[1, 1], "has won!"))
+    top_row_horizontal <<- (top_row_horizontal + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -46,6 +58,8 @@ x_move <- function(row, column) {
     move <<- 0
   } else if (board[2, 1] == board[2, 2] && board[2, 2] == board[2, 3]) {
     print(paste(board[2, 1], "has won!"))
+    middle_row_horizontal <<- (middle_row_horizontal + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -53,6 +67,8 @@ x_move <- function(row, column) {
     move <<- 0
   } else if (board[3, 1] == board[3, 2] && board[3, 2] == board[3, 3]) {
     print(paste(board[3, 1], "has won!"))
+    bottom_row_horizontal <<- (bottom_row_horizontal + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -60,6 +76,8 @@ x_move <- function(row, column) {
     move <<- 0
   } else if (board[1, 1] == board[2, 1] && board[2, 1] == board[3, 1]) {
     print(paste(board[1, 1], "has won!"))
+    first_col_vertical <<- (first_col_vertical + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -67,6 +85,8 @@ x_move <- function(row, column) {
     move <<- 0
   } else if (board[1, 2] == board[2, 2] && board[2, 2] == board[3, 2]) {
     print(paste(board[1, 2], "has won!"))
+    second_col_vertical <<- (second_col_vertical + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -74,6 +94,8 @@ x_move <- function(row, column) {
     move <<- 0
   } else if (board[1, 3] == board[2, 3] && board[2, 3] == board[3, 3]) {
     print(paste(board[1, 3], "has won!"))
+    third_col_vertical <<- (third_col_vertical + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -81,6 +103,8 @@ x_move <- function(row, column) {
     move <<- 0
   } else if (board[1, 1] == board[2, 2] && board[2, 2] == board[3, 3]) {
     print(paste(board[1, 1], "has won!"))
+    left_to_right_diagonal <<- (left_to_right_diagonal + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -88,6 +112,8 @@ x_move <- function(row, column) {
     move <<- 0
   } else if (board[1, 3] == board[2, 2] && board[2, 2] == board[3, 1]) {
     print(paste(board[1, 3], "has won!"))
+    right_to_left_diagonal <<- (right_to_left_diagonal + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -95,6 +121,8 @@ x_move <- function(row, column) {
     move <<- 0
   } else if (move == 9) {
     print("The game has ended in a draw")
+    game_draw <<- (game_draw + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -115,6 +143,8 @@ o_move <- function(row, column) {
   
   if (board[1, 1] == board[1, 2] && board[1, 2] == board[1, 3]) {
     print(paste(board[1, 1], "has won!"))
+    top_row_horizontal <<- (top_row_horizontal + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -122,6 +152,8 @@ o_move <- function(row, column) {
     move <<- 0
   } else if (board[2, 1] == board[2, 2] && board[2, 2] == board[2, 3]) {
     print(paste(board[2, 1], "has won!"))
+    middle_row_horizontal <<- (middle_row_horizontal + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -129,6 +161,8 @@ o_move <- function(row, column) {
     move <<- 0
   } else if (board[3, 1] == board[3, 2] && board[3, 2] == board[3, 3]) {
     print(paste(board[3, 1], "has won!"))
+    bottom_row_horizontal <<- (bottom_row_horizontal + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -136,6 +170,8 @@ o_move <- function(row, column) {
     move <<- 0
   } else if (board[1, 1] == board[2, 1] && board[2, 1] == board[3, 1]) {
     print(paste(board[1, 1], "has won!"))
+    first_col_vertical <<- (first_col_vertical + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -143,6 +179,8 @@ o_move <- function(row, column) {
     move <<- 0
   } else if (board[1, 2] == board[2, 2] && board[2, 2] == board[3, 2]) {
     print(paste(board[1, 2], "has won!"))
+    second_col_vertical <<- (second_col_vertical + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -150,6 +188,8 @@ o_move <- function(row, column) {
     move <<- 0
   } else if (board[1, 3] == board[2, 3] && board[2, 3] == board[3, 3]) {
     print(paste(board[1, 3], "has won!"))
+    third_col_vertical <<- (third_col_vertical + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -157,6 +197,8 @@ o_move <- function(row, column) {
     move <<- 0
   } else if (board[1, 1] == board[2, 2] && board[2, 2] == board[3, 3]) {
     print(paste(board[1, 1], "has won!"))
+    left_to_right_diagonal <<- (left_to_right_diagonal + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -164,6 +206,8 @@ o_move <- function(row, column) {
     move <<- 0
   } else if (board[1, 3] == board[2, 2] && board[2, 2] == board[3, 1]) {
     print(paste(board[1, 3], "has won!"))
+    right_to_left_diagonal <<- (right_to_left_diagonal + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -171,6 +215,8 @@ o_move <- function(row, column) {
     move <<- 0
   } else if (move == 9) {
     print("The game has ended in a draw")
+    game_draw <<- (game_draw + 1)
+    game_total_moves <<- append(game_total_moves, move)
     board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
@@ -182,7 +228,7 @@ o_move <- function(row, column) {
   
 }
 
-# I think an easy way to stop the columns from losing their labeling 
+# I think an easy way to stop the columns from losing their labeling upon completing a game 
 # you could just wrap the variable properly with brackets, like this:
 # else if (move == 9) {
 # print("The game has ended in a draw")
@@ -193,3 +239,5 @@ o_move <- function(row, column) {
 # move <<- 0
 # } but i cannot be bothered to go through that right now and numerical referencing
 # and what not works fine
+
+as.data.frame(table(game_total_moves))
