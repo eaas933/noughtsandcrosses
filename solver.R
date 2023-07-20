@@ -238,8 +238,6 @@ o_move <- function(row, column) {
   
 }
 
-board
-
 x_move("A", "D")
 o_move("A", "E")
 x_move("B", "D")
