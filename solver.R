@@ -28,62 +28,6 @@ board <- matrix(
 rownames(board) = c("A", "B", "C") 
 colnames(board) = c("D", "E", "F")
 
-if (board["A", "D"] == board["A", "E"] && board["A", "E"] == board["A", "F"]) {
-  print(paste(board["A", "D"], "has won!"))
-  board <- matrix(
-    c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
-  rownames(board) = c("A", "B", "C") 
-  colnames(board) = c("D", "E", "F")
-} else if (board["B", "D"] == board["B", "E"] && board["B", "E"] == board["B", "F"]) {
-  print(paste(board["B", "D"], "has won!"))
-  board <- matrix(
-    c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
-  rownames(board) = c("A", "B", "C") 
-  colnames(board) = c("D", "E", "F")
-} else if (board["C", "D"] == board["C", "E"] && board["C", "E"] == board["C", "F"]) {
-  print(paste(board["C", "D"], "has won!"))
-  board <- matrix(
-    c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
-  rownames(board) = c("A", "B", "C") 
-  colnames(board) = c("D", "E", "F")
-} else if (board["A", "D"] == board["B", "D"] && board["B", "D"] == board["C", "D"]) {
-  print(paste(board["A", "D"], "has won!"))
-  board <- matrix(
-    c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
-  rownames(board) = c("A", "B", "C") 
-  colnames(board) = c("D", "E", "F")
-} else if (board["A", "E"] == board["B", "E"] && board["B", "E"] == board["C", "E"]) {
-  print(paste(board["A", "E"], "has won!"))
-  board <- matrix(
-    c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
-  rownames(board) = c("A", "B", "C") 
-  colnames(board) = c("D", "E", "F")
-} else if (board["A", "F"] == board["B", "F"] && board["B", "F"] == board["C", "F"]) {
-  print(paste(board["A", "F"], "has won!"))
-  board <- matrix(
-    c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
-  rownames(board) = c("A", "B", "C") 
-  colnames(board) = c("D", "E", "F")
-} else if (board["A", "D"] == board["B", "E"] && board["B", "E"] == board["C", "F"]) {
-  print(paste(board["A", "D"], "has won!"))
-  board <- matrix(
-    c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
-  rownames(board) = c("A", "B", "C") 
-  colnames(board) = c("D", "E", "F")
-} else if (board["A", "F"] == board["B", "E"] && board["B", "E"] == board["C", "D"]) {
-  print(paste(board["A", "F"], "has won!"))
-  board <- matrix(
-    c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
-  rownames(board) = c("A", "B", "C") 
-  colnames(board) = c("D", "E", "F")
-} else {
-  print("The game has ended in a draw")
-  board <- matrix(
-    c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
-  rownames(board) = c("A", "B", "C") 
-  colnames(board) = c("D", "E", "F")
-}
-
 move <<- 0
 
 x_move <- function(row, column) {
@@ -93,65 +37,65 @@ x_move <- function(row, column) {
   
   print(paste("move #", move))
     
-  if (board["A", "D"] == board["A", "E"] && board["A", "E"] == board["A", "F"]) {
-    print(paste(board["A", "D"], "has won!"))
-    board <- matrix(
+  if (board[1, 1] == board[1, 2] && board[1, 2] == board[1, 3]) {
+    print(paste(board[1, 1], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["B", "D"] == board["B", "E"] && board["B", "E"] == board["B", "F"]) {
-    print(paste(board["B", "D"], "has won!"))
-    board <- matrix(
+  } else if (board[2, 1] == board[2, 2] && board[2, 2] == board[2, 3]) {
+    print(paste(board[2, 1], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["C", "D"] == board["C", "E"] && board["C", "E"] == board["C", "F"]) {
-    print(paste(board["C", "D"], "has won!"))
-    board <- matrix(
+  } else if (board[3, 1] == board[3, 2] && board[3, 2] == board[3, 3]) {
+    print(paste(board[3, 1], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["A", "D"] == board["B", "D"] && board["B", "D"] == board["C", "D"]) {
-    print(paste(board["A", "D"], "has won!"))
-    board <- matrix(
+  } else if (board[1, 1] == board[2, 1] && board[2, 1] == board[3, 1]) {
+    print(paste(board[1, 1], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["A", "E"] == board["B", "E"] && board["B", "E"] == board["C", "E"]) {
-    print(paste(board["A", "E"], "has won!"))
-    board <- matrix(
+  } else if (board[1, 2] == board[2, 2] && board[2, 2] == board[3, 2]) {
+    print(paste(board[1, 2], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["A", "F"] == board["B", "F"] && board["B", "F"] == board["C", "F"]) {
-    print(paste(board["A", "F"], "has won!"))
-    board <- matrix(
+  } else if (board[1, 3] == board[2, 3] && board[2, 3] == board[3, 3]) {
+    print(paste(board[1, 3], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["A", "D"] == board["B", "E"] && board["B", "E"] == board["C", "F"]) {
-    print(paste(board["A", "D"], "has won!"))
-    board <- matrix(
+  } else if (board[1, 1] == board[2, 2] && board[2, 2] == board[3, 3]) {
+    print(paste(board[1, 1], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["A", "F"] == board["B", "E"] && board["B", "E"] == board["C", "D"]) {
-    print(paste(board["A", "F"], "has won!"))
-    board <- matrix(
+  } else if (board[1, 3] == board[2, 2] && board[2, 2] == board[3, 1]) {
+    print(paste(board[1, 3], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
   } else if (move == 9) {
     print("The game has ended in a draw")
-    board <- matrix(
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
@@ -169,65 +113,65 @@ o_move <- function(row, column) {
   
   print(paste("move #", move))
   
-  if (board["A", "D"] == board["A", "E"] && board["A", "E"] == board["A", "F"]) {
-    print(paste(board["A", "D"], "has won!"))
-    board <- matrix(
+  if (board[1, 1] == board[1, 2] && board[1, 2] == board[1, 3]) {
+    print(paste(board[1, 1], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["B", "D"] == board["B", "E"] && board["B", "E"] == board["B", "F"]) {
-    print(paste(board["B", "D"], "has won!"))
-    board <- matrix(
+  } else if (board[2, 1] == board[2, 2] && board[2, 2] == board[2, 3]) {
+    print(paste(board[2, 1], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["C", "D"] == board["C", "E"] && board["C", "E"] == board["C", "F"]) {
-    print(paste(board["C", "D"], "has won!"))
-    board <- matrix(
+  } else if (board[3, 1] == board[3, 2] && board[3, 2] == board[3, 3]) {
+    print(paste(board[3, 1], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["A", "D"] == board["B", "D"] && board["B", "D"] == board["C", "D"]) {
-    print(paste(board["A", "D"], "has won!"))
-    board <- matrix(
+  } else if (board[1, 1] == board[2, 1] && board[2, 1] == board[3, 1]) {
+    print(paste(board[1, 1], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["A", "E"] == board["B", "E"] && board["B", "E"] == board["C", "E"]) {
-    print(paste(board["A", "E"], "has won!"))
-    board <- matrix(
+  } else if (board[1, 2] == board[2, 2] && board[2, 2] == board[3, 2]) {
+    print(paste(board[1, 2], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["A", "F"] == board["B", "F"] && board["B", "F"] == board["C", "F"]) {
-    print(paste(board["A", "F"], "has won!"))
-    board <- matrix(
+  } else if (board[1, 3] == board[2, 3] && board[2, 3] == board[3, 3]) {
+    print(paste(board[1, 3], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["A", "D"] == board["B", "E"] && board["B", "E"] == board["C", "F"]) {
-    print(paste(board["A", "D"], "has won!"))
-    board <- matrix(
+  } else if (board[1, 1] == board[2, 2] && board[2, 2] == board[3, 3]) {
+    print(paste(board[1, 1], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
-  } else if (board["A", "F"] == board["B", "E"] && board["B", "E"] == board["C", "D"]) {
-    print(paste(board["A", "F"], "has won!"))
-    board <- matrix(
+  } else if (board[1, 3] == board[2, 2] && board[2, 2] == board[3, 1]) {
+    print(paste(board[1, 3], "has won!"))
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
   } else if (move == 9) {
     print("The game has ended in a draw")
-    board <- matrix(
+    board <<- matrix(
       c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE)
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
@@ -238,8 +182,14 @@ o_move <- function(row, column) {
   
 }
 
-x_move("A", "D")
-o_move("A", "E")
-x_move("B", "D")
-o_move("A", "F")
-x_move("C", "D")
+# I think an easy way to stop the columns from losing their labeling 
+# you could just wrap the variable properly with brackets, like this:
+# else if (move == 9) {
+# print("The game has ended in a draw")
+# board <<- (matrix(
+#  c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE),
+# rownames(board) = c("A", "B", "C"), 
+# colnames(board) = c("D", "E", "F"))
+# move <<- 0
+# } but i cannot be bothered to go through that right now and numerical referencing
+# and what not works fine
