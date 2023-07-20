@@ -56,6 +56,16 @@ x_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[2, 1] == board[2, 2] && board[2, 2] == board[2, 3]) {
     print(paste(board[2, 1], "has won!"))
     middle_row_horizontal <<- (middle_row_horizontal + 1)
@@ -65,6 +75,16 @@ x_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[3, 1] == board[3, 2] && board[3, 2] == board[3, 3]) {
     print(paste(board[3, 1], "has won!"))
     bottom_row_horizontal <<- (bottom_row_horizontal + 1)
@@ -74,6 +94,16 @@ x_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[1, 1] == board[2, 1] && board[2, 1] == board[3, 1]) {
     print(paste(board[1, 1], "has won!"))
     first_col_vertical <<- (first_col_vertical + 1)
@@ -83,6 +113,16 @@ x_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[1, 2] == board[2, 2] && board[2, 2] == board[3, 2]) {
     print(paste(board[1, 2], "has won!"))
     second_col_vertical <<- (second_col_vertical + 1)
@@ -92,6 +132,16 @@ x_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[1, 3] == board[2, 3] && board[2, 3] == board[3, 3]) {
     print(paste(board[1, 3], "has won!"))
     third_col_vertical <<- (third_col_vertical + 1)
@@ -101,6 +151,16 @@ x_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[1, 1] == board[2, 2] && board[2, 2] == board[3, 3]) {
     print(paste(board[1, 1], "has won!"))
     left_to_right_diagonal <<- (left_to_right_diagonal + 1)
@@ -110,6 +170,16 @@ x_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[1, 3] == board[2, 2] && board[2, 2] == board[3, 1]) {
     print(paste(board[1, 3], "has won!"))
     right_to_left_diagonal <<- (right_to_left_diagonal + 1)
@@ -119,6 +189,16 @@ x_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (move == 9) {
     print("The game has ended in a draw")
     game_draw <<- (game_draw + 1)
@@ -128,6 +208,16 @@ x_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   }
   
   board
@@ -150,6 +240,16 @@ o_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[2, 1] == board[2, 2] && board[2, 2] == board[2, 3]) {
     print(paste(board[2, 1], "has won!"))
     middle_row_horizontal <<- (middle_row_horizontal + 1)
@@ -159,6 +259,16 @@ o_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[3, 1] == board[3, 2] && board[3, 2] == board[3, 3]) {
     print(paste(board[3, 1], "has won!"))
     bottom_row_horizontal <<- (bottom_row_horizontal + 1)
@@ -168,6 +278,16 @@ o_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[1, 1] == board[2, 1] && board[2, 1] == board[3, 1]) {
     print(paste(board[1, 1], "has won!"))
     first_col_vertical <<- (first_col_vertical + 1)
@@ -177,6 +297,16 @@ o_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[1, 2] == board[2, 2] && board[2, 2] == board[3, 2]) {
     print(paste(board[1, 2], "has won!"))
     second_col_vertical <<- (second_col_vertical + 1)
@@ -186,6 +316,16 @@ o_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[1, 3] == board[2, 3] && board[2, 3] == board[3, 3]) {
     print(paste(board[1, 3], "has won!"))
     third_col_vertical <<- (third_col_vertical + 1)
@@ -195,6 +335,16 @@ o_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[1, 1] == board[2, 2] && board[2, 2] == board[3, 3]) {
     print(paste(board[1, 1], "has won!"))
     left_to_right_diagonal <<- (left_to_right_diagonal + 1)
@@ -204,6 +354,16 @@ o_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (board[1, 3] == board[2, 2] && board[2, 2] == board[3, 1]) {
     print(paste(board[1, 3], "has won!"))
     right_to_left_diagonal <<- (right_to_left_diagonal + 1)
@@ -213,6 +373,16 @@ o_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   } else if (move == 9) {
     print("The game has ended in a draw")
     game_draw <<- (game_draw + 1)
@@ -222,6 +392,16 @@ o_move <- function(row, column) {
     rownames(board) = c("A", "B", "C") 
     colnames(board) = c("D", "E", "F")
     move <<- 0
+    session_summary_1 <<- ggplot(as.data.frame(table(game_total_moves)), aes(x = "", y = Freq, fill = game_total_moves)) +
+      geom_bar(width = 1, stat = "identity") +  coord_polar(theta = "y")
+    
+    winning_methods <- c(top_row_horizontal, middle_row_horizontal, bottom_row_horizontal, first_col_vertical, second_col_vertical, third_col_vertical, left_to_right_diagonal, right_to_left_diagonal, game_draw)
+    winning_methods_labels <- c("top_row_horizontal", "middle_row_horizontal", "bottom_row_horizontal", "first_col_vertical", "second_col_vertical", "third_col_vertical", "left_to_right_diagonal", "right_to_left_diagonal", "game_draw")
+    session_winning_method_counter <- data.frame(winning_methods_labels, winning_methods)
+    session_summary_2 <<- ggplot(session_winning_method_counter, aes(x = winning_methods_labels, y = winning_methods, color = winning_methods_labels, fill = winning_methods_labels)) +
+      geom_bar(stat = "identity") +   
+      coord_flip() +
+      theme_bw()
   }
   
   board
@@ -238,6 +418,4 @@ o_move <- function(row, column) {
 # colnames(board) = c("D", "E", "F"))
 # move <<- 0
 # } but i cannot be bothered to go through that right now and numerical referencing
-# and what not works fine
-
-as.data.frame(table(game_total_moves))
+# and what not works finesess
