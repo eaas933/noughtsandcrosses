@@ -552,26 +552,42 @@ o_move <- function(row, column) {
 }
 
 # I think an easy way to stop the columns from losing their labeling upon completing a game 
-# you could just wrap the variable properly with brackets, like this:
-# else if (move == 9) {
-# print("The game has ended in a draw")
-# board <<- (matrix(
-#  c(1, 2, 3, 4, 5, 6, 7, 8, 9), ncol = 3, nrow = 3, byrow = TRUE),
-# rownames(board) = c("A", "B", "C"), 
-# colnames(board) = c("D", "E", "F"))
-# move <<- 0
-# } but i cannot be bothered to go through that right now and numerical referencing
-# and what not works fine
+# you could just wrap the variable properly with brackets.
+# i cannot be bothered to go through that right now and numerical referencing and what not works fine
 
-# now to implement the minimax algorithm into the script to see if it works. 
+# another thing i need to work on is stopping spaces which are already filled from being updated
+# in subsequent moves
 
-# create a random moving computer, with a turn based approach and one that does not 
-# place in spots which in are taken
+computer_1 <- function() {
+    second_x_tree <<- c(board[1, 1], board[1, 3], board[3, 1], board[3, 3])
+    second_x_move <<- sample(second_x_tree, 1)
+    if (move == 0 & board[1, 1] != "o" & second_x_move == 1) {
+      x_move(1, 1)
+    } else if (move == 0 & board[1, 1] != "o" & second_x_move == 2) {
+      x_move(1, 3)
+    } else if (move == 0 & board[1, 1] != "o" & second_x_move == 3) {
+      x_move(3, 1)
+    } else if (move == 0 & board[1, 1] != "o" & second_x_move == 4) {
+      x_move(3, 3)
+    }
+    
+    if (move == 2 & board[2, 2] == "o" & board[1, 1] == "x") {
+      x_move(3, 3)
+    } else if (move == 2 & board[2, 2] == "o" & board[3, 3] == "x") {
+      x_move(1, 1)
+    } else if (move == 2 & board[2, 2] == "o" & board[1, 3] == "x") {
+      x_move(3, 1)
+    } else if (move == 2 & board[2, 2] == "o" & board[1, 3] == "x") {
+      x_move(3, 1)
+    } else if (move == 2 & board[2, 2] == "o" & board[3, 1] == "x") {
+      x_move(1, 3)
+    }
 
-random_row <- sample(1:3, 1)
-random_col <- sample(1:3, 1)
+ # etc etc, you keep going from here i suppose
+  
+    board
+    
+}
 
-# for loops
-
-board
-
+# i think all that's left is to go through the tedious process of hard encoding the computer's
+# invincible noughts & crosses algorithm
