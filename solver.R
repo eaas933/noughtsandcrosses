@@ -48,12 +48,43 @@ names(session_stats) <- c("x_wins", "o_wins", "draw", "total")
 
 x_move <- function(row, column) {
   
-  board[row, column] <<- "x"
-  
-  move <<- (move + 1)  
-  
-  print(paste("move #", move))
-  
+  if (board[1, 1] == 1 | board[1, 1] == "1" | board[1, 1] != "x" | board[1, 1] != "o") { 
+      board[row, column] <<- "x"
+      move <<- (move + 1)  
+      print(paste("move #", move)) 
+    } else if (board[1, 2] == 2 | board[1, 2] == "2" | board[1, 2] != "x" | board[1, 2] != "o") { 
+    board[row, column] <<- "x"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[1, 3] == 3 | board[1, 3] == "3" | board[1, 3] != "x" | board[1, 3] != "o") { 
+    board[row, column] <<- "x"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[2, 1] == 4 | board[2, 1] == "4" | board[2, 1] != "x" | board[2, 1] != "o") { 
+    board[row, column] <<- "x"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[2, 2] == 5 | board[2, 2] == "5" | board[2, 2] != "x" | board[2, 2] != "o") { 
+    board[row, column] <<- "x"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[2, 3] == 6 | board[2, 3] == "6" | board[2, 3] != "x" | board[2, 3] != "o") { 
+    board[row, column] <<- "x"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[3, 1] == 7 | board[3, 1] == "7" | board[3, 1] != "x" | board[3, 1] != "o") { 
+    board[row, column] <<- "x"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[3, 2] == 8 | board[3, 2] == "8" | board[3, 2] != "x" | board[3, 2] != "o") { 
+    board[row, column] <<- "x"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[3, 3] == 9 | board[3, 3] == "9" | board[3, 3] != "x" | board[3, 3] != "o") { 
+    board[row, column] <<- "x"
+    move <<- (move + 1)  
+    print(paste("move #", move)) }
+    
   if (board[1, 1] == board[1, 2] && board[1, 2] == board[1, 3]) {
     print(paste(board[1, 1], "has won!"))
     top_row_horizontal <<- (top_row_horizontal + 1)
@@ -268,11 +299,43 @@ x_move <- function(row, column) {
 }
 
 o_move <- function(row, column) {
-  board[row, column] <<- "o"
   
-  move <<- (move + 1)  
-  
-  print(paste("move #", move))
+  if (board[1, 1] == 1 | board[1, 1] == "1" | board[1, 1] != "x" | board[1, 1] != "o") { 
+    board[row, column] <<- "o"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[1, 2] == 2 | board[1, 2] == "2" | board[1, 2] != "x" | board[1, 2] != "o") { 
+    board[row, column] <<- "o"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[1, 3] == 3 | board[1, 3] == "3" | board[1, 3] != "x" | board[1, 3] != "o") { 
+    board[row, column] <<- "o"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[2, 1] == 4 | board[2, 1] == "4" | board[2, 1] != "x" | board[2, 1] != "o") { 
+    board[row, column] <<- "o"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[2, 2] == 5 | board[2, 2] == "5" | board[2, 2] != "x" | board[2, 2] != "o") { 
+    board[row, column] <<- "o"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[2, 3] == 6 | board[2, 3] == "6" | board[2, 3] != "x" | board[2, 3] != "o") { 
+    board[row, column] <<- "o"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[3, 1] == 7 | board[3, 1] == "7" | board[3, 1] != "x" | board[3, 1] != "o") { 
+    board[row, column] <<- "o"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[3, 2] == 8 | board[3, 2] == "8" | board[3, 2] != "x" | board[3, 2] != "o") { 
+    board[row, column] <<- "o"
+    move <<- (move + 1)  
+    print(paste("move #", move)) 
+  } else if (board[3, 3] == 9 | board[3, 3] == "9" | board[3, 3] != "x" | board[3, 3] != "o") { 
+    board[row, column] <<- "o"
+    move <<- (move + 1)  
+    print(paste("move #", move)) }
   
   if (board[1, 1] == board[1, 2] && board[1, 2] == board[1, 3]) {
     print(paste(board[1, 1], "has won!"))
@@ -498,7 +561,7 @@ o_move <- function(row, column) {
 # colnames(board) = c("D", "E", "F"))
 # move <<- 0
 # } but i cannot be bothered to go through that right now and numerical referencing
-# and what not works finesess
+# and what not works fine
 
 # now to implement the minimax algorithm into the script to see if it works. 
 
@@ -511,3 +574,4 @@ random_col <- sample(1:3, 1)
 # for loops
 
 board
+
