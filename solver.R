@@ -419,3 +419,7 @@ o_move <- function(row, column) {
 # move <<- 0
 # } but i cannot be bothered to go through that right now and numerical referencing
 # and what not works finesess
+
+# now to implement the minimax algorithm into the script to see if it works. 
+
+
