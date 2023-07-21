@@ -39,6 +39,8 @@ and another which was won on the first column vertically.
 
 ![image](https://github.com/eaas933/noughtsandcrosses/assets/64386451/5cc22cfc-213f-4140-b096-6f52f7c7270c)
 
+These summaries are automatically updated as the games are played in the console so they can showcase livetime information!
+
 Work in progress Feature:
 - Finish implementing the algorithm with the computers being effectively unbeatable.
 ("computer_1()" in the console to activate the computer for "x" and "computer_2()" in the console to activate the computer for "o").
