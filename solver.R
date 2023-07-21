@@ -551,13 +551,6 @@ o_move <- function(row, column) {
   
 }
 
-# I think an easy way to stop the columns from losing their labeling upon completing a game 
-# you could just wrap the variable properly with brackets.
-# i cannot be bothered to go through that right now and numerical referencing and what not works fine
-
-# another thing i need to work on is stopping spaces which are already filled from being updated
-# in subsequent moves
-
 computer_1 <- function() {
     second_x_tree <<- c(board[1, 1], board[1, 3], board[3, 1], board[3, 3])
     second_x_move <<- sample(second_x_tree, 1)
