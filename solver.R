@@ -29,7 +29,7 @@ rownames(board) = c("A", "B", "C")
 colnames(board) = c("D", "E", "F")
 
 move <<- 0
-game_total_moves <<- c(5, 5)
+game_total_moves <<- c()
 top_row_horizontal <<- 0
 middle_row_horizontal <<- 0 
 bottom_row_horizontal <<- 0
