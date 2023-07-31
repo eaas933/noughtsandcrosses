@@ -1,5 +1,5 @@
 # noughtsandcrosses
-The traditional game of noughts and crosses but with some extra statistics recording features and an option for a computer player that is unbeatable.
+The traditional game of noughts and crosses but with some extra statistics recording features and an option for a computer player that cannot lose.
 
 Prerequisites:
 - R (Programming Language) 
