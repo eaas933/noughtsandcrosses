@@ -1,5 +1,5 @@
 # noughtsandcrosses
-An application of an algorithm to showcase the optimal moves for noughts and crosses to win or draw every time.
+The traditional game of noughts and crosses but with some extra statistics recording features and an option for a computer player that is unbeatable.
 
 Prerequisites:
 - R (Programming Language) 
